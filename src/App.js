@@ -1,10 +1,10 @@
 import './App.css';
-import Button from './components/Button';
+import RandomNumber from './excerciseComponents/section_06/RandomNumber/RandomNumber';
 
 function App() {
   return (
     <div className='App'>
-      <Button />
+      <RandomNumber />
     </div>
   );
 }
