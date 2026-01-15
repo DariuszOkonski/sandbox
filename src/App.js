@@ -1,10 +1,11 @@
 import './App.css';
+import Button from './components/Button';
 import Rando from './components/Rando';
 
 function App() {
   return (
     <div className='App'>
-      <Rando maxNum={7} />
+      <Button />
     </div>
   );
 }
