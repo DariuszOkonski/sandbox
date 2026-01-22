@@ -1,13 +1,11 @@
 import { Component } from 'react';
-import Head from './images/head.png';
-import Tail from './images/tail.png';
+import CoinContainer from './CoinContainer';
 
 class AppCoinFlip extends Component {
   render() {
     return (
-      <div>
-        <img src={Head} alt='' />
-        <img src={Tail} alt='' />
+      <div className='App'>
+        <CoinContainer />
       </div>
     );
   }
