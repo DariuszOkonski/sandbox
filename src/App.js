@@ -1,11 +1,10 @@
 import './App.css';
-import Lottery from './excerciseComponents/section_08/Lottery/Lottery';
+import AppCoinFlip from './excerciseComponents/section_09/CoinFlip/AppCoinFlip';
 
 function App() {
   return (
     <div className='App'>
-      <Lottery />
-      <Lottery title='Mini Daily' maxNum={10} maxBalls={4} />
+      <AppCoinFlip />
     </div>
   );
 }
