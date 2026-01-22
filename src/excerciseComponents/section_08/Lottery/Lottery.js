@@ -19,7 +19,11 @@ class Lottery extends Component {
   }
 
   generate() {
-    console.log('generate: ', this.state.nums);
+    this.setState((prevState) => ({
+      nums: prevState.nums.map(
+        (n) => Math.floor(Math.random() * this.props.maxNum) + 1,
+      ),
+    }));
   }
 
   handleClick() {
