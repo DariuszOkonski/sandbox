@@ -2,6 +2,7 @@ import { Component } from 'react';
 import Head from './images/head.png';
 import Tail from './images/tail.png';
 import { choice } from './helpers';
+import Coin from './Coin';
 
 class CoinContainer extends Component {
   static defaultProps = {
@@ -45,6 +46,7 @@ class CoinContainer extends Component {
     return (
       <div className='CoinContainer'>
         <h2>Let's Flip A Coin!</h2>
+        <Coin {...this.state.currCoin} />
         <button onClick={this.handleClick}>Flip Me!</button>
         <p>
           Out of {this.state.nFlips} flips, there have been {this.state.nHeads}{' '}
@@ -55,5 +57,4 @@ class CoinContainer extends Component {
   }
 }
 
-// <img src={Head} alt='head' />
 export default CoinContainer;
