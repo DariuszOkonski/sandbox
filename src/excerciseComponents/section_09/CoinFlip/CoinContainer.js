@@ -49,8 +49,13 @@ class CoinContainer extends Component {
         <Coin {...this.state.currCoin} />
         <button onClick={this.handleClick}>Flip Me!</button>
         <p>
-          Out of {this.state.nFlips} flips, there have been {this.state.nHeads}{' '}
-          heads and {this.state.nTails} tails
+          Out of{' '}
+          <strong style={{ fontSize: '22px' }}>{this.state.nFlips}</strong>{' '}
+          flips, there have been{' '}
+          <strong style={{ fontSize: '22px' }}>{this.state.nHeads}</strong>{' '}
+          heads and{' '}
+          <strong style={{ fontSize: '22px' }}>{this.state.nTails}</strong>{' '}
+          tails
         </p>
       </div>
     );
