@@ -5,7 +5,13 @@ import BoxContainer from './BoxContainer';
 class AppColorBoxes extends Component {
   render() {
     return (
-      <div>
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
         <BoxContainer />
       </div>
     );
