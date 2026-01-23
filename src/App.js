@@ -1,10 +1,10 @@
 import './App.css';
-import AppCoinFlip from './excerciseComponents/section_09/CoinFlip/AppCoinFlip';
+import AppColorBoxes from './excerciseComponents/section_09/ColorBoxes/AppColorBoxes';
 
 function App() {
   return (
     <div className='App'>
-      <AppCoinFlip />
+      <AppColorBoxes />
     </div>
   );
 }
