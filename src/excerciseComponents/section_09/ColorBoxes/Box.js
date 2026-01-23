@@ -3,18 +3,6 @@ import './Box.css';
 import { boxColorChoice } from './helper';
 
 class Box extends Component {
-  static defaultProps = {
-    allColors: [
-      'purple',
-      'magenta',
-      'violet',
-      'pink',
-      'red',
-      'green',
-      'crimson',
-    ],
-  };
-
   constructor(props) {
     super(props);
     this.state = {
