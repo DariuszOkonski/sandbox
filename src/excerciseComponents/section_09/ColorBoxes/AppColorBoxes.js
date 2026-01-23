@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import Box from './Box';
 
 class AppColorBoxes extends Component {
   render() {
     return (
       <div>
-        <h1>Color Boxes</h1>
+        <Box />
       </div>
     );
   }
