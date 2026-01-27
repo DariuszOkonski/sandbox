@@ -1,10 +1,9 @@
 import './App.css';
-import AppColorBoxes from './excerciseComponents/section_09/ColorBoxes/AppColorBoxes';
 
 function App() {
   return (
     <div className='App'>
-      <AppColorBoxes />
+      <h1>Hello World</h1>
     </div>
   );
 }
