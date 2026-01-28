@@ -1,9 +1,10 @@
 import './App.css';
+import AppHangman from './excerciseComponents/section_11/Hangman/AppHangman';
 
 function App() {
   return (
     <div className='App'>
-      <h1>Hello World</h1>
+      <AppHangman />
     </div>
   );
 }
