@@ -7,10 +7,18 @@ class Form_1 extends Component {
     this.state = { username: '' };
 
     this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(evt) {
     this.setState({ username: evt.target.value });
+  }
+
+  handleSubmit(evt) {
+    evt.preventDefault();
+
+    console.log('you submitted');
+    this.setState({ username: '' });
   }
 
   render() {
@@ -18,12 +26,13 @@ class Form_1 extends Component {
       <div>
         <h1>Form Demo</h1>
 
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <input
             type='text'
             value={this.state.username}
             onChange={this.handleChange}
           />
+          <button>Submit</button>
         </form>
       </div>
     );
