@@ -11,6 +11,14 @@ class ShoppingList extends Component {
         { id: '2', name: 'Bread', qty: '2 loaves' },
       ],
     };
+
+    this.addItem = this.addItem.bind(this);
+  }
+
+  addItem(item) {
+    this.setState((prevState) => ({
+      items: [...prevState.items, { id: +Math.random(), ...item }],
+    }));
   }
 
   renderItems() {
@@ -30,7 +38,7 @@ class ShoppingList extends Component {
       <div>
         <h1>Shopping List</h1>
         {this.renderItems()}
-        <ShoppingListForm />
+        <ShoppingListForm addItem={this.addItem} />
       </div>
     );
   }
