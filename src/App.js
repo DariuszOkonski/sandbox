@@ -1,13 +1,10 @@
 import './App.css';
-import MultipleForm from './excerciseComponents/section_13/MultipleForm/MultipleForm';
-
-import Form_1 from './excerciseComponents/section_13/Form_1/Form_1';
+import AppForm from './excerciseComponents/section_13/AppForm/AppForm';
 
 function App() {
   return (
     <div className='App'>
-      <Form_1 />
-      <MultipleForm />
+      <AppForm />
     </div>
   );
 }
