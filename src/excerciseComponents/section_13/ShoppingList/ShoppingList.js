@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import ShoppingListForm from '../ShoppingListForm/ShoppingListForm';
+import { v4 as uuidv4 } from 'uuid';
 
 class ShoppingList extends Component {
   constructor(props) {
@@ -7,8 +8,8 @@ class ShoppingList extends Component {
 
     this.state = {
       items: [
-        { id: '1', name: 'Milk', qty: '2 gallons' },
-        { id: '2', name: 'Bread', qty: '2 loaves' },
+        { id: uuidv4(), name: 'Milk', qty: '2 gallons' },
+        { id: uuidv4(), name: 'Bread', qty: '2 loaves' },
       ],
     };
 
@@ -17,7 +18,7 @@ class ShoppingList extends Component {
 
   addItem(item) {
     this.setState((prevState) => ({
-      items: [...prevState.items, { id: +Math.random(), ...item }],
+      items: [...prevState.items, { id: uuidv4(), ...item }],
     }));
   }
 
