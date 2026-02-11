@@ -3,7 +3,7 @@ import AppToDo from './excerciseComponents/section_15/AppToDo';
 
 function App() {
   return (
-    <div className='App'>
+    <div>
       <AppToDo />
     </div>
   );
