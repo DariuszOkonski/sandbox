@@ -11,6 +11,13 @@ class BoxList extends Component {
     };
 
     this.create = this.create.bind(this);
+    this.remove = this.remove.bind(this);
+  }
+
+  remove(id) {
+    this.setState((prevState) => ({
+      boxes: prevState.boxes.filter((box) => box.id !== id),
+    }));
   }
 
   create(newBox) {
@@ -26,6 +33,8 @@ class BoxList extends Component {
         width={box.width}
         height={box.height}
         color={box.color}
+        removeBox={this.remove}
+        id={box.id}
       />
     ));
 

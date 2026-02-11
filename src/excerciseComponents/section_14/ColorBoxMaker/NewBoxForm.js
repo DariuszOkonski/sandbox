@@ -22,8 +22,6 @@ class NewBoxForm extends Component {
   handleSubmit(evt) {
     evt.preventDefault();
 
-    console.log('handle submit: ', this.state);
-
     const newBox = {
       id: uuidv4(),
       ...this.state,
