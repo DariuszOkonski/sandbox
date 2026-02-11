@@ -1,10 +1,10 @@
 import './App.css';
-import AppColorBoxMaker from './excerciseComponents/section_14/ColorBoxMaker/AppColorBoxMaker';
+import AppToDo from './excerciseComponents/section_15/AppToDo';
 
 function App() {
   return (
     <div className='App'>
-      <AppColorBoxMaker />
+      <AppToDo />
     </div>
   );
 }
