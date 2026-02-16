@@ -1,10 +1,10 @@
 import './App.css';
-import AppToDo from './excerciseComponents/section_15/AppToDo';
+import AppYahtzeeGame from './excerciseComponents/section_16/AppYahtzeeGame';
 
 function App() {
   return (
     <div>
-      <AppToDo />
+      <AppYahtzeeGame />
     </div>
   );
 }
