@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { Component } from 'react';
+import './ZenQuote.css';
 
 class ZenQuote extends Component {
   constructor(props) {
@@ -7,6 +8,7 @@ class ZenQuote extends Component {
 
     this.state = {
       quote: null,
+      isLoaded: false,
     };
   }
 
@@ -14,9 +16,12 @@ class ZenQuote extends Component {
     axios
       .get('https://api.github.com/zen')
       .then((response) => {
-        this.setState({
-          quote: response.data,
-        });
+        setTimeout(() => {
+          this.setState({
+            quote: response.data,
+            isLoaded: true,
+          });
+        }, 3000);
       })
       .catch((err) => {
         console.log('err: ', err);
@@ -26,8 +31,14 @@ class ZenQuote extends Component {
   render() {
     return (
       <div>
-        <h1>Always remember...</h1>
-        <p>{this.state.quote ? this.state.quote : 'Loading...'}</p>
+        {this.state.isLoaded ? (
+          <div>
+            <h1>Always remember...</h1>
+            <p>{this.state.quote}</p>
+          </div>
+        ) : (
+          <div className='loader' />
+        )}
       </div>
     );
   }
