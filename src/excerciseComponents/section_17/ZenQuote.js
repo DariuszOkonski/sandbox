@@ -9,6 +9,7 @@ class ZenQuote extends Component {
     this.state = {
       quote: null,
       isLoaded: false,
+      error: '',
     };
   }
 
@@ -24,11 +25,18 @@ class ZenQuote extends Component {
         }, 3000);
       })
       .catch((err) => {
-        console.log('err: ', err);
+        console.log('err: ', err.message);
+        this.setState({
+          error: err.message,
+        });
       });
   }
 
   render() {
+    if (this.state.error) {
+      return <h1>{this.state.error}</h1>;
+    }
+
     return (
       <div>
         {this.state.isLoaded ? (
