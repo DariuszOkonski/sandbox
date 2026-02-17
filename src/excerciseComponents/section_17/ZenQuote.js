@@ -41,6 +41,10 @@ class ZenQuote extends Component {
     console.groupEnd();
   }
 
+  componentWillUnmount() {
+    console.log('!!! component will unmount');
+  }
+
   render() {
     if (this.state.error) {
       return <h1>{this.state.error}</h1>;
