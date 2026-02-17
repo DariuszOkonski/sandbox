@@ -31,8 +31,14 @@ class ZenQuote extends Component {
       });
   }
 
-  componentDidUpdate() {
-    console.log('!!! inside component');
+  componentDidUpdate(prevProps, prevState) {
+    console.group('!!! inside component');
+    console.log('!!! prevProps: ', prevProps);
+    console.log('!!! prevState: ', prevState);
+    console.log('=======');
+    console.log('!!! this.props: ', this.props);
+    console.log('!!! this.state: ', this.state);
+    console.groupEnd();
   }
 
   render() {
