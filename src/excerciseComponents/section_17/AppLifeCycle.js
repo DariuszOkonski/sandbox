@@ -1,11 +1,14 @@
 import { Component } from 'react';
-import ZenQuote from './ZenQuote';
+import GithubUserInfo from './GithubUserInfo';
 
 class AppLifeCycle extends Component {
   render() {
     return (
       <div>
-        <ZenQuote />
+        <GithubUserInfo username='facebook' />
+        <GithubUserInfo username='colt' />
+        <GithubUserInfo username='gaearon' />
+        <GithubUserInfo username='sophiebits' />
       </div>
     );
   }

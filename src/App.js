@@ -3,7 +3,7 @@ import AppLifeCycle from './excerciseComponents/section_17/AppLifeCycle';
 
 function App() {
   return (
-    <div>
+    <div className='App'>
       <AppLifeCycle />
     </div>
   );
