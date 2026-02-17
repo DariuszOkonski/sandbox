@@ -25,11 +25,14 @@ class ZenQuote extends Component {
         }, 3000);
       })
       .catch((err) => {
-        console.log('err: ', err.message);
         this.setState({
           error: err.message,
         });
       });
+  }
+
+  componentDidUpdate() {
+    console.log('!!! inside component');
   }
 
   render() {
