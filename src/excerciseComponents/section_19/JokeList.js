@@ -34,9 +34,6 @@ class JokeList extends Component {
   }
 
   handleVote(id, delta) {
-    console.log('id: ', id);
-    console.log('delta: ', delta);
-
     this.setState((prevState) => ({
       jokes: prevState.jokes.map((j) =>
         j.id === id ? { ...j, vote: j.vote + delta } : j,
@@ -60,16 +57,20 @@ class JokeList extends Component {
         </div>
 
         <div className='JokeList-jokes'>
-          {this.state.jokes.map((j) => (
-            <Joke
-              key={j.id}
-              id={j.id}
-              votes={j.vote}
-              text={j.text}
-              upvote={() => this.handleVote(j.id, 1)}
-              downvote={() => this.handleVote(j.id, -1)}
-            />
-          ))}
+          {!this.state.jokes.length ? (
+            <div>LOADING...</div>
+          ) : (
+            this.state.jokes.map((j) => (
+              <Joke
+                key={j.id}
+                id={j.id}
+                votes={j.vote}
+                text={j.text}
+                upvote={() => this.handleVote(j.id, 1)}
+                downvote={() => this.handleVote(j.id, -1)}
+              />
+            ))
+          )}
         </div>
       </div>
     );
