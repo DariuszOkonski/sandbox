@@ -14,6 +14,7 @@ class JokeList extends Component {
 
     this.state = {
       jokes: JSON.parse(window.localStorage.getItem('jokes') || '[]'),
+      loading: false,
     };
 
     this.handleClick = this.handleClick.bind(this);
@@ -40,6 +41,7 @@ class JokeList extends Component {
 
     this.setState(
       (prevState) => ({
+        loading: false,
         jokes: [...prevState.jokes, ...jokes],
       }),
       () =>
@@ -60,10 +62,19 @@ class JokeList extends Component {
   }
 
   handleClick() {
-    this.getJokes();
+    this.setState({ loading: true }, this.getJokes);
   }
 
   render() {
+    if (this.state.loading || !this.state.jokes.length) {
+      return (
+        <div className='spinner'>
+          <i className='far fa-8x fa-laugh fa-spin JokeList-spinner' />
+          <h1 className='JokeList-title'>Loading...</h1>
+        </div>
+      );
+    }
+
     return (
       <div className='JokeList'>
         <div className='JokeList-sidebar'>
@@ -81,20 +92,16 @@ class JokeList extends Component {
         </div>
 
         <div className='JokeList-jokes'>
-          {!this.state.jokes.length ? (
-            <div>LOADING...</div>
-          ) : (
-            this.state.jokes.map((j) => (
-              <Joke
-                key={j.id}
-                id={j.id}
-                votes={j.vote}
-                text={j.text}
-                upvote={() => this.handleVote(j.id, 1)}
-                downvote={() => this.handleVote(j.id, -1)}
-              />
-            ))
-          )}
+          {this.state.jokes.map((j) => (
+            <Joke
+              key={j.id}
+              id={j.id}
+              votes={j.vote}
+              text={j.text}
+              upvote={() => this.handleVote(j.id, 1)}
+              downvote={() => this.handleVote(j.id, -1)}
+            />
+          ))}
         </div>
       </div>
     );
