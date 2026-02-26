@@ -15,12 +15,13 @@ class JokeList extends Component {
     this.state = {
       jokes: JSON.parse(window.localStorage.getItem('jokes') || '[]'),
     };
+
+    this.handleClick = this.handleClick.bind(this);
   }
 
   async componentDidMount() {
     if (this.state.jokes.length === 0) {
       this.getJokes();
-    } else {
     }
   }
 
@@ -42,11 +43,19 @@ class JokeList extends Component {
   }
 
   handleVote(id, delta) {
-    this.setState((prevState) => ({
-      jokes: prevState.jokes.map((j) =>
-        j.id === id ? { ...j, vote: j.vote + delta } : j,
-      ),
-    }));
+    this.setState(
+      (prevState) => ({
+        jokes: prevState.jokes.map((j) =>
+          j.id === id ? { ...j, vote: j.vote + delta } : j,
+        ),
+      }),
+      () =>
+        window.localStorage.setItem('jokes', JSON.stringify(this.state.jokes)),
+    );
+  }
+
+  handleClick() {
+    this.getJokes();
   }
 
   render() {
@@ -61,7 +70,9 @@ class JokeList extends Component {
             alt='funny-face'
           />
 
-          <button className='JokeList-getmore'>New Jokes</button>
+          <button onClick={this.handleClick} className='JokeList-getmore'>
+            New Jokes
+          </button>
         </div>
 
         <div className='JokeList-jokes'>
