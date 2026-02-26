@@ -2,6 +2,24 @@ import React, { Component } from 'react';
 import './Joke.css';
 
 class Joke extends Component {
+  getColor() {
+    if (this.props.votes >= 15) {
+      return '#4caf50';
+    } else if (this.props.votes >= 12) {
+      return '#8bc34a';
+    } else if (this.props.votes >= 9) {
+      return '#cddc39';
+    } else if (this.props.votes >= 6) {
+      return '#ffeb3b';
+    } else if (this.props.votes >= 3) {
+      return '#ffc107';
+    } else if (this.props.votes >= 0) {
+      return '#ff9800';
+    } else {
+      return '#f44336';
+    }
+  }
+
   render() {
     return (
       <div className='Joke'>
