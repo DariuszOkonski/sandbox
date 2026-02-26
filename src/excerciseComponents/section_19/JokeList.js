@@ -31,6 +31,7 @@ class JokeList extends Component {
     }
 
     this.setState({ jokes });
+    window.localStorage.setItem('jokes', JSON.stringify(jokes));
   }
 
   handleVote(id, delta) {
