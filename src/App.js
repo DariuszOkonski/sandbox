@@ -1,10 +1,10 @@
 import './App.css';
-import AppDadJokes from './excerciseComponents/section_19/AppDadJokes';
+import AppRouter from './excerciseComponents/section_20/AppRouter';
 
 function App() {
   return (
     <div className='App'>
-      <AppDadJokes />
+      <AppRouter />
     </div>
   );
 }
