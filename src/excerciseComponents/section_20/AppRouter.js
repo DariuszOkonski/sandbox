@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Dog from './Dog';
 
 class AppRouter extends Component {
   render() {
     return (
       <BrowserRouter>
-        <h1>Hello</h1>
+        <Routes>
+          <Route exact path='/' element={<h1>Home</h1>} />
+          <Route path='/dog' element={<Dog />} />
+        </Routes>
       </BrowserRouter>
     );
   }
