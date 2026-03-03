@@ -12,7 +12,7 @@ class AppRouter extends Component {
         <Routes>
           <Route exact path='/' element={<About />} />
           <Route path='/dog' element={<Dog />} />
-          <Route path='/hater' element={<Hater />} />
+          <Route path='/dog/hater' element={<Hater />} />
           <Route path='/contact' element={<Contact />} />
         </Routes>
       </BrowserRouter>
