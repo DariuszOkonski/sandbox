@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
 import Dog from './Dog';
 import About from './About';
 import Contact from './Contact';
@@ -9,6 +9,12 @@ class AppRouter extends Component {
   render() {
     return (
       <BrowserRouter>
+        <nav>
+          <Link to='/'>About</Link>
+          <Link to='/dog'>Dog</Link>
+          <Link to='/dog/hater'>Hater</Link>
+          <Link to='/contact'>Contact</Link>
+        </nav>
         <Routes>
           <Route exact path='/' element={<About />} />
           <Route path='/dog' element={<Dog />} />
