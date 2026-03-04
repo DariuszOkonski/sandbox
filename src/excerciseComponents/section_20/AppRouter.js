@@ -20,7 +20,7 @@ class AppRouter extends Component {
         </nav>
         <Routes>
           <Route path='/' element={<About />} />
-          <Route path='/dog' element={<Dog />} />
+          <Route path='/dog' element={<Dog name='Muffins' />} />
           <Route path='/dog/hater' element={<Hater />} />
           <Route path='/contact' element={<Contact />} />
         </Routes>
