@@ -4,11 +4,13 @@ import VendingMachine from './VendingMachine';
 import Chips from './Chips';
 import Sardines from './Sardines';
 import Soda from './Soda';
+import Navbar from './Navbar';
 
 class AppSection21 extends Component {
   render() {
     return (
       <BrowserRouter>
+        <Navbar />
         <Routes>
           <Route path='/' element={<VendingMachine />} />
           <Route path='/soda' element={<Soda />} />
