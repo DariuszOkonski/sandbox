@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import Message from './Message';
 
 class Chips extends Component {
   render() {
     return (
       <div>
-        <h1>Chips</h1>
+        <Message>
+          <h1>Chips</h1>
 
-        <Link to='/'>Go Back</Link>
+          <Link to='/'>Go Back</Link>
+        </Message>
       </div>
     );
   }

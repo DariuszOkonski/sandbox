@@ -5,7 +5,6 @@ import Chips from './Chips';
 import Sardines from './Sardines';
 import Soda from './Soda';
 import Navbar from './Navbar';
-import Message from './Message';
 
 class AppSection21 extends Component {
   render() {
@@ -13,38 +12,10 @@ class AppSection21 extends Component {
       <BrowserRouter>
         <Navbar />
         <Routes>
-          <Route
-            path='/'
-            element={
-              <Message>
-                <VendingMachine />
-              </Message>
-            }
-          />
-          <Route
-            path='/soda'
-            element={
-              <Message>
-                <Soda />
-              </Message>
-            }
-          />
-          <Route
-            path='/sardines'
-            element={
-              <Message>
-                <Sardines />
-              </Message>
-            }
-          />
-          <Route
-            path='/chips'
-            element={
-              <Message>
-                <Chips />
-              </Message>
-            }
-          />
+          <Route path='/' element={<VendingMachine />} />
+          <Route path='/soda' element={<Soda />} />
+          <Route path='/sardines' element={<Sardines />} />
+          <Route path='/chips' element={<Chips />} />
         </Routes>
       </BrowserRouter>
     );
