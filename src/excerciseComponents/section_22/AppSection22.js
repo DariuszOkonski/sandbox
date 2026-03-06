@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import Food from './Food';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 class AppSection22 extends Component {
   render() {
     return (
-      <div>
-        <h1>Section 22</h1>
-        <Food name='Kale' />
-      </div>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/food/:name' element={<Food name='Egg' />} />
+        </Routes>
+      </BrowserRouter>
     );
   }
 }
