@@ -3,13 +3,14 @@ import Food from './Food';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import ComponentWrapper from './ComponentWrapper';
 import Meal from './Meal';
+import FoodSearch from './FoodSearch';
 
 class AppSection22 extends Component {
   render() {
     return (
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<h1>Home Page</h1>} />
+          <Route path='/' element={<FoodSearch />} />
           <Route
             path='/food/:name'
             element={
