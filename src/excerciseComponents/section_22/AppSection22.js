@@ -9,6 +9,7 @@ class AppSection22 extends Component {
     return (
       <BrowserRouter>
         <Routes>
+          <Route path='/' element={<h1>Home Page</h1>} />
           <Route
             path='/food/:name'
             element={
@@ -18,6 +19,7 @@ class AppSection22 extends Component {
             }
           />
           <Route path='/food/:foodName/drink/:drinkName' element={<Meal />} />
+          <Route path='*' element={<h1>NOT FOUND!!!</h1>} />
         </Routes>
       </BrowserRouter>
     );
