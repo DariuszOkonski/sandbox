@@ -32,7 +32,7 @@ class FoodSearch extends Component {
           value={this.state.query}
           onChange={this.handleChange}
         />
-        {/* <Link to={`/food/${this.state.query}`}>Go!</Link> **/}
+        <Link to={`/food/${this.state.query}`}>Go!</Link>
         <div>
           <button onClick={this.handleClick}>Save new food!</button>
         </div>

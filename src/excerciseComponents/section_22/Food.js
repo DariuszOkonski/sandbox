@@ -8,7 +8,7 @@ class Food extends Component {
     return (
       <div>
         {/\d/.test(this.props.name) ? (
-          <Navigate to='/' replace />
+          <Navigate to='/notfound' replace />
         ) : (
           <div>
             <h1>I love to eat: {this.props.name}</h1>
