@@ -1,10 +1,10 @@
 import './App.css';
-import AppSection22 from './excerciseComponents/section_22/AppSection22';
+import AppSection23 from './excerciseComponents/section_23/AppSection23';
 
 function App() {
   return (
     <div className='App'>
-      <AppSection22 />
+      <AppSection23 />
     </div>
   );
 }
